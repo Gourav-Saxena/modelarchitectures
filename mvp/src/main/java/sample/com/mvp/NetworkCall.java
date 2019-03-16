@@ -7,10 +7,9 @@ public class NetworkCall {
 
     NetworkCall(PresenterImpl presenter) {
         presenterImplementation = presenter;
-        getData();
     }
 
-    private void getData() {
+    public void getData() {
         new Thread(new Runnable() {
             @Override
             public void run() {

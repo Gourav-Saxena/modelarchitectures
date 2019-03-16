@@ -3,9 +3,11 @@ package sample.com.mvp;
 public class Presenter implements PresenterImpl {
 
     private ViewImpl viewImplementation;
+    private NetworkCall networkCall;
 
     Presenter(ViewImpl viewImpl) {
         viewImplementation = viewImpl;
+        networkCall = new NetworkCall(this);
     }
 
     @Override
@@ -14,6 +16,6 @@ public class Presenter implements PresenterImpl {
     }
 
     public void sendNetworkCall() {
-       new NetworkCall(this);
+        networkCall.getData();
     }
 }
